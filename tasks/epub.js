@@ -13,13 +13,28 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('epub', 'Transforms a zip file to an epub', function() {
+  grunt.registerMultiTask('epub', 'Creates epub from specified files', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',
       separator: ', '
     });
 
+  //   epub: {
+  //     command: function () {
+  //         var name = '../<%= files.epub %>',
+  //         commands = [
+  //             'cd <%= directories.epub %>',
+  //             'zip -X0 ' + name + ' mimetype',
+  //             'zip -Xur9D ' + name + ' *'
+  //         ];
+
+  //         return commands.join('&&');
+  //     },
+  //     options: {
+  //         stdout: true
+  //     }
+  // }
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
       // Concat specified files.
