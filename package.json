@@ -42,7 +42,11 @@
     "grunt": "~0.4.4"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "epub"
   ],
-  "main": "index.js"
+  "files": [
+    "tasks",
+    "LICENSE-MIT"
+  ]
 }
