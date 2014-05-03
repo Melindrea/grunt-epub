@@ -10,12 +10,14 @@
 
 module.exports = function(grunt) {
     var path = require('path'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    chalk = require('chalk'),
+    epubCheckVersion = '3.0.1';
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-    grunt.registerMultiTask('epub', 'Creates epub from specified files', function() {
+    grunt.registerMultiTask('epub', 'Creates epub from specified files', function () {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             dest: 'epub'
@@ -62,4 +64,38 @@ module.exports = function(grunt) {
         });
     });
 
+    grunt.registerMultiTask('epubCheck', 'Wrapper around epubcheck library', function () {
+        var cb = this.async(),
+        options = this.options({
+            failOnError: true
+        }),
+        lib = path.resolve('tasks/libs/epubcheck-' + epubCheckVersion + '/epubcheck-' + epubCheckVersion + '.jar');
+
+        this.files.forEach(function (f) {
+            var name = path.resolve(options.dest + '/' + f.dest + '.epub');
+
+            var src = f.src.filter(function (filepath) {
+                // Warn on and remove invalid source files (if nonull was set).
+                if (! grunt.file.exists(path.resolve(filepath))) {
+                    grunt.log.warn('Source file "' + filepath + '" not found.');
+                    return false;
+                } else {
+                    return true;
+                }
+            }).forEach(function (filepath) {
+                var cmd = 'java -jar ' + lib + ' ' + filepath;
+                var cp = exec(cmd, options.execOptions, function (err, stdout, stderr) {
+                    if (typeof options.callback === 'function') {
+                        options.callback.call(this, err, stdout, stderr, cb);
+                    } else {
+                        if (err && options.failOnError) {
+                            grunt.warn('File: ' + filepath + '\n' + err);
+                        }
+                        cb();
+                    }
+                }.bind(this));
+                grunt.verbose.writeln('Command:', chalk.yellow(cmd));
+            });
+        });
+    });
 };

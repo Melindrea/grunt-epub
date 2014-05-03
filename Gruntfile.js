@@ -8,7 +8,7 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
@@ -43,6 +43,14 @@ module.exports = function(grunt) {
         },
         files: {
           'custom': ['test/fixtures']
+        }
+      }
+    },
+
+    epubCheck: {
+      all: {
+        files: {
+          'all': ['epub/default.epub', 'tmp/epub/custom.epub']
         }
       }
     },

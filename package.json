@@ -48,5 +48,8 @@
   "files": [
     "tasks",
     "LICENSE-MIT"
-  ]
+  ],
+  "dependencies": {
+    "chalk": "~0.4.0"
+  }
 }
