@@ -1,0 +1,4 @@
+v0.1.0:
+  date: "2014-05-03"
+  changes:
+    - will create a valid epub, assuming all files (except `META-INF/container.xml` and `mimetype`) are created through other means

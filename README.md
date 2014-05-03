@@ -35,7 +35,7 @@ grunt.loadNpmTasks('grunt-epub');
 ## Usage Examples
 
 ## Contributing
-We welcome all kinds of contributions! The most basic way to show your support is to star the project, and if you'd like to get involved please see the [Contributing to grunt-epub](http://assemble.io/contributing/) guide for information on contributing to this project.
+We welcome all kinds of contributions! The most basic way to show your support is to star the project, or to raise issues.
 
 ## Author
 
@@ -49,7 +49,9 @@ We welcome all kinds of contributions! The most basic way to show your support i
 Copyright (c) 2014 Marie Hogebrandt, contributors.  
 Released under the MIT license
 
-
+**DATE**       **VERSION**   **CHANGES**                                                             
+* 2014-05-03   v0.1.0        will create a valid epub, assuming all files (except                    
+                             `META-INF/container.xml` and `mimetype`) are created through other means
 
 ***
 
