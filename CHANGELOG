@@ -1,4 +1,8 @@
+v0.2.0:
+    date: "2014-05-05",
+    changes:
+        - Creates the toc.ncx from metadata
 v0.1.0:
-  date: "2014-05-03"
-  changes:
-    - will create a valid epub, assuming all files (except `META-INF/container.xml` and `mimetype`) are created through other means
+    date: "2014-05-03"
+    changes:
+        - will create a valid epub, assuming all files (except `META-INF/container.xml` and `mimetype`) are created through other means

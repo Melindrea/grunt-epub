@@ -1,7 +1,7 @@
 {
   "name": "grunt-epub",
   "description": "Creates epub from specified files",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/Melindrea/grunt-epub",
   "author": {
     "name": "Marie Hogebrandt",
