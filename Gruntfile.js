@@ -25,11 +25,14 @@ module.exports = function (grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp', 'epub']
+      tests: ['tmp', 'epub', 'test/fixtures/toc.ncx']
     },
 
     // Configuration to be run (and then tested).
     epub: {
+      options: {
+        meta: require('./config')
+      },
       default_options: {
         options: {
         },
@@ -70,7 +73,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'epub', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'epub', 'nodeunit', 'clean']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test', 'verb']);

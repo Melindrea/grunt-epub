@@ -1,0 +1,200 @@
+{
+    "author": {
+        "as": "Hogebrandt, Marie",
+        "name": "Marie Hogebrandt"
+    },
+    "date": "2014-03-21T09:44:33Z",
+    "files": [
+        {
+            "href": "toc.ncx",
+            "name": "ncx",
+            "type": "application/x-dtbnc+xml"
+        },
+        {
+            "href": "styles/epub.css",
+            "name": "style",
+            "type": "text/css"
+        },
+        {
+            "href": "images/cover.jpg",
+            "name": "cover-image",
+            "type": "image/jpeg"
+        }
+    ],
+    "keywords": [
+        "Urban Fantasy",
+        "Svensk folktro"
+    ],
+    "language": "sv",
+    "license": null,
+    "pages": {
+        "colophon": {
+            "href": "colophon.html",
+            "title": "Kolofon"
+        },
+        "cover": {
+            "href": "cover.html",
+            "title": "Framsida"
+        },
+        "title-page": {
+            "href": "title.html",
+            "title": "Titelsida"
+        },
+        "toc": {
+            "href": "content.html",
+            "title": "Inneh\u00e5ll"
+        }
+    },
+    "publisher": null,
+    "outline": [
+        {
+            "id": 2,
+            "name": "akt-01",
+            "items": [
+                {
+                    "id": 3,
+                    "name": "kapitel-01",
+                    "title": "Kapitel 1"
+                },
+                {
+                    "id": 4,
+                    "name": "mellanspel-01",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 5,
+                    "name": "kapitel-02",
+                    "title": "Kapitel 2"
+                },
+                {
+                    "id": 6,
+                    "name": "kapitel-03",
+                    "title": "Kapitel 3"
+                },
+                {
+                    "id": 7,
+                    "name": "mellanspel-02",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 8,
+                    "name": "kapitel-04",
+                    "title": "Kapitel 4"
+                },
+                {
+                    "id": 9,
+                    "name": "kapitel-05",
+                    "title": "Kapitel 5"
+                }
+            ],
+            "title": "Akt I: Konsten att F\u00f6rf\u00f6ra"
+        },
+        {
+            "id": 10,
+            "name": "akt-02",
+            "items": [
+                {
+                    "id": 11,
+                    "name": "kapitel-06",
+                    "title": "Kapitel 6"
+                },
+                {
+                    "id": 12,
+                    "name": "mellanspel-03",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 13,
+                    "name": "kapitel-07",
+                    "title": "Kapitel 7"
+                },
+                {
+                    "id": 14,
+                    "name": "kapitel-08",
+                    "title": "Kapitel 8"
+                },
+                {
+                    "id": 15,
+                    "name": "mellanspel-04",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 16,
+                    "name": "kapitel-09",
+                    "title": "Kapitel 9"
+                },
+                {
+                    "id": 17,
+                    "name": "kapitel-10",
+                    "title": "Kapitel 10"
+                }
+            ],
+            "title": "Akt II: Konsten att F\u00f6rf\u00f6lja"
+        },
+        {
+            "id": 18,
+            "name": "akt-03",
+            "items": [
+                {
+                    "id": 19,
+                    "name": "kapitel-11",
+                    "title": "Kapitel 12"
+                },
+                {
+                    "id": 20,
+                    "name": "mellanspel-05",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 21,
+                    "name": "kapitel-12",
+                    "title": "Kapitel 12"
+                },
+                {
+                    "id": 22,
+                    "name": "kapitel-13",
+                    "title": "Kapitel 13"
+                },
+                {
+                    "id": 23,
+                    "name": "kapitel-14",
+                    "title": "Kapitel 14"
+                },
+                {
+                    "id": 24,
+                    "name": "mellanspel-06",
+                    "title": "Mellanspel"
+                },
+                {
+                    "id": 25,
+                    "name": "kapitel-15",
+                    "title": "Kapitel 15"
+                },
+                {
+                    "id": 26,
+                    "name": "epilog",
+                    "title": "Epilog"
+                }
+            ],
+            "title": "Akt III: Konsten att F\u00f6rg\u00f6ra"
+        }
+    ],
+    "spine": {
+        "backmatter": [
+            {
+                "id": 27,
+                "name": "colophon",
+                "title": "Kolophon"
+            }
+        ],
+        "frontmatter": [
+            {
+                "id": 1,
+                "name": "cover",
+                "title": "Framsida"
+            }
+        ]
+    },
+    "title": "Sk\u00e4rvor av det f\u00f6rg\u00e5ngna",
+    "uid": "skarvor-av-det-forgangna2014-03-21-09-44-33-012690"
+}

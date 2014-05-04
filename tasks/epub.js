@@ -12,6 +12,8 @@ module.exports = function(grunt) {
     var path = require('path'),
     exec = require('child_process').exec,
     chalk = require('chalk'),
+    mustache = require('mustache'),
+    metafiles = require('../libs/metafiles'),
     epubCheckVersion = '3.0.1';
 
   // Please see the Grunt documentation for more information regarding task
@@ -20,8 +22,9 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('epub', 'Creates epub from specified files', function () {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
-            dest: 'epub'
-        }), files = path.resolve('files'),
+            dest: 'epub',
+            meta: {}
+        }), files = path.resolve('files'), folder,
         cb = this.async();
 
         grunt.file.mkdir(options.dest);
@@ -44,9 +47,15 @@ module.exports = function(grunt) {
                     return true;
                 }
             }).forEach(function (filepath) {
-                cmd.push('cd ' + path.resolve(filepath));
+                folder = path.resolve(filepath);
+                cmd.push('cd ' + folder);
                 cmd.push('zip -Xur9D ' + name + ' *');
             });
+            // Create whatever metafiles are needed ...
+            // folder now contains one of the ones in the file,
+            // put the metadata files in it
+            var toc = metafiles.toc(options.meta);
+            grunt.file.write(folder + '/toc.ncx', toc);
 
             var cp = exec(cmd.join('&&'), options.execOptions, function (err, stdout, stderr) {
                 if (typeof options.callback === 'function') {
@@ -69,7 +78,7 @@ module.exports = function(grunt) {
         options = this.options({
             failOnError: true
         }),
-        lib = path.resolve('tasks/libs/epubcheck-' + epubCheckVersion + '/epubcheck-' + epubCheckVersion + '.jar');
+        lib = path.resolve('libs/epubcheck-' + epubCheckVersion + '/epubcheck-' + epubCheckVersion + '.jar');
 
         this.files.forEach(function (f) {
             var name = path.resolve(options.dest + '/' + f.dest + '.epub');

@@ -50,6 +50,8 @@
     "LICENSE-MIT"
   ],
   "dependencies": {
-    "chalk": "~0.4.0"
+    "chalk": "~0.4.0",
+    "mustache": "~0.8.1",
+    "xmlbuilder": "~2.2.1"
   }
 }
