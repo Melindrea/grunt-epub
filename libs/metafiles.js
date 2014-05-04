@@ -9,7 +9,6 @@
 'use strict';
 
 var path = require('path'),
-mustache = require('mustache'),
 grunt = require('grunt'),
 builder = require('xmlbuilder');
 
