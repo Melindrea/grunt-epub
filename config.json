@@ -4,47 +4,12 @@
         "name": "Marie Hogebrandt"
     },
     "date": "2014-03-21T09:44:33Z",
-    "files": [
-        {
-            "href": "toc.ncx",
-            "name": "ncx",
-            "type": "application/x-dtbnc+xml"
-        },
-        {
-            "href": "styles/epub.css",
-            "name": "style",
-            "type": "text/css"
-        },
-        {
-            "href": "images/cover.jpg",
-            "name": "cover-image",
-            "type": "image/jpeg"
-        }
-    ],
     "keywords": [
         "Urban Fantasy",
         "Svensk folktro"
     ],
     "language": "sv",
     "license": null,
-    "pages": {
-        "colophon": {
-            "href": "colophon.html",
-            "title": "Kolofon"
-        },
-        "cover": {
-            "href": "cover.html",
-            "title": "Framsida"
-        },
-        "title-page": {
-            "href": "title.html",
-            "title": "Titelsida"
-        },
-        "toc": {
-            "href": "content.html",
-            "title": "Inneh\u00e5ll"
-        }
-    },
     "publisher": null,
     "outline": [
         {
@@ -196,5 +161,6 @@
         ]
     },
     "title": "Sk\u00e4rvor av det f\u00f6rg\u00e5ngna",
-    "uid": "skarvor-av-det-forgangna2014-03-21-09-44-33-012690"
+    "uid": "skarvor-av-det-forgangna2014-03-21-09-44-33-012690",
+    "description": "Some description ..."
 }

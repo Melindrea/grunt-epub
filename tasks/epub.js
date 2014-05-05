@@ -46,16 +46,23 @@ module.exports = function(grunt) {
                 } else {
                     return true;
                 }
-            }).forEach(function (filepath) {
+            });
+
+            src.forEach(function (filepath) {
                 folder = path.resolve(filepath);
                 cmd.push('cd ' + folder);
                 cmd.push('zip -Xur9D ' + name + ' *');
             });
+
             // Create whatever metafiles are needed ...
             // folder now contains one of the ones in the file,
             // put the metadata files in it
             var toc = metafiles.toc(options.meta);
             grunt.file.write(folder + '/toc.ncx', toc);
+
+            var content = metafiles.content(options.meta, src);
+            // grunt.log.writeln(content);
+            grunt.file.write(folder + '/content.opf', content);
 
             var cp = exec(cmd.join('&&'), options.execOptions, function (err, stdout, stderr) {
                 if (typeof options.callback === 'function') {

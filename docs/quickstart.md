@@ -27,47 +27,12 @@ The example is from my own writing.
         "name": "Marie Hogebrandt"
     },
     "date": "2014-03-21T09:44:33Z",
-    "files": [
-        {
-            "href": "toc.ncx",
-            "name": "ncx",
-            "type": "application/x-dtbnc+xml"
-        },
-        {
-            "href": "styles/epub.css",
-            "name": "style",
-            "type": "text/css"
-        },
-        {
-            "href": "images/cover.jpg",
-            "name": "cover-image",
-            "type": "image/jpeg"
-        }
-    ],
     "keywords": [
         "Urban Fantasy",
         "Svensk folktro"
     ],
     "language": "sv",
     "license": null,
-    "pages": {
-        "colophon": {
-            "href": "colophon.html",
-            "title": "Kolofon"
-        },
-        "cover": {
-            "href": "cover.html",
-            "title": "Framsida"
-        },
-        "title-page": {
-            "href": "title.html",
-            "title": "Titelsida"
-        },
-        "toc": {
-            "href": "content.html",
-            "title": "Inneh\u00e5ll"
-        }
-    },
     "publisher": null,
     "outline": [
         {
@@ -128,6 +93,15 @@ The example is from my own writing.
 }
 
 ```
+
+## File Naming
+Files that are part of the spine/table of contents need to have a filename
+based on their `name`, as that ties everything together. If it's in the
+spine or outline, the `name` set there *must* inform the filename, ex:
+
+The cover has the `name` cover in spine/frontmatter. This means the
+filename needs to be `cover.html`, or the automatic recognition of files
+in the manifest will not work.
 
 [grunt]: http://gruntjs.com/
 [Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
