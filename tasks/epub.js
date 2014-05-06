@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             grunt.file.write(folder + '/toc.ncx', toc);
 
             var content = metafiles.content(options.meta, src);
-            // grunt.log.writeln(content);
+            grunt.log.writeln(content);
             grunt.file.write(folder + '/content.opf', content);
 
             var cp = exec(cmd.join('&&'), options.execOptions, function (err, stdout, stderr) {
@@ -73,7 +73,6 @@ module.exports = function(grunt) {
                     cb();
                 }
             }.bind(this));
-
             // Print a success message.
             grunt.log.writeln('File "' + name + '" created.');
         });

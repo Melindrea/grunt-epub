@@ -1,9 +1,14 @@
 {
-    "author": {
+    "authors": [{
         "as": "Hogebrandt, Marie",
         "name": "Marie Hogebrandt"
+    }],
+    "contributors": [],
+    "editor": null,
+    "dates": {
+        "original-publication": "2014-03-21T09:44:33Z",
+        "ops-publication": "2014-03-21T09:44:33Z"
     },
-    "date": "2014-03-21T09:44:33Z",
     "keywords": [
         "Urban Fantasy",
         "Svensk folktro"
@@ -149,18 +154,23 @@
             {
                 "id": 27,
                 "name": "colophon",
-                "title": "Kolophon"
+                "title": "Kolophon",
+                "type": "colophon"
             }
         ],
         "frontmatter": [
             {
                 "id": 1,
                 "name": "cover",
-                "title": "Framsida"
+                "title": "Framsida",
+                "type": "cover"
             }
         ]
     },
     "title": "Sk\u00e4rvor av det f\u00f6rg\u00e5ngna",
-    "uid": "skarvor-av-det-forgangna2014-03-21-09-44-33-012690",
+    "id": {
+        "value": "skarvor-av-det-forgangna2014-03-21-09-44-33-012690",
+        "scheme": "UUID"
+    },
     "description": "Some description ..."
 }

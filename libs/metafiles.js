@@ -27,7 +27,7 @@ metafiles.toc = function (data) {
             .dtd('-//NISO//DTD ncx 2005-1//EN', 'http://www.daisy.org/z3986/2005/ncx-2005-1.dtd')
         .root()
         .e('head')
-            .e('meta').att('name', 'dtb:uid').att('content', data.uid).up()
+            .e('meta').att('name', 'dtb:uid').att('content', data.id.value).up()
             .e('meta').att('name', 'dtb:depth').att('content', data.depth).up()
             .e('meta').att('name', 'dtb:totalPageCount').att('content', 0).up()
             .e('meta').att('name', 'dtb:maxPageNumber').att('content', 0).root()
@@ -57,7 +57,8 @@ metafiles.content = function (data, directories) {
             .att('xmlns:opf', 'http://www.idpf.org/2007/opf')
             .e('dc:title', data.title).up()
             .e('dc:language', data.language).att('xsi:type', 'dcterms:RFC3066').up()
-            .e('dc:identifier', data.uid).att('id', 'etextno').att('opf:scheme', 'UUID').up();
+            .e('meta').att('name', 'cover').att('content', 'cover').up()
+            .e('dc:identifier', data.id.value).att('id', 'etextno').att('opf:scheme', data.id.scheme).up();
 
         if (data.keywords) {
             pkg.e('dc:subject', data.keywords.join(', ')).up();
@@ -67,20 +68,33 @@ metafiles.content = function (data, directories) {
             pkg.e('dc:subject', data.description).up();
         }
 
-        if (data.author) {
-            pkg.e('dc:creator', data.author.name).att('opf:file-as', data.author.as).up();
+        if (data.authors) {
+            data.authors.forEach(function (author) {
+                pkg.e('dc:creator', author.name).att('opf:role', 'aut').att('opf:file-as', author.as).up();
+            });
+        }
+        if (data.contributors) {
+            data.contributors.forEach(function (contributor) {
+                pkg.e('dc:contributor', contributor.name).att('opf:file-as', contributor.as).up();
+            });
+        }
+
+        if (data.editor) {
+             pkg.e('dc:contributor', data.editor).att('opf:role', 'edt').up();
         }
 
         if (data.publisher) {
-             pkg.e('dc:publisher', data.description).up();
+             pkg.e('dc:publisher', data.publisher).up();
         }
 
         if (data.license) {
-             pkg.e('dc:righs', data.license).up();
+             pkg.e('dc:rights', data.license).up();
         }
 
-        if (data.date) {
-            pkg.e('dc:date', data.date).att('opf-event', 'conversion').up();
+        if (data.dates) {
+            Object.keys(data.dates).forEach(function (key) {
+                pkg.e('dc:date', data.dates[key]).att('opf-event', key).up();
+            });
         }
 
         // Now it's out of the metadata
@@ -91,7 +105,47 @@ metafiles.content = function (data, directories) {
 
         // Spine
         pkg.e(spine(data));
+
+        // Guide
+        pkg.e(guide(data));
     return pkg.end({ pretty: true, indent: '  ', newline: '\n' });
+};
+
+var guide = function (data) {
+    var items = [];
+    var validTypes = ['cover', 'colophon', 'title-page', 'toc', 'index', 'glossary',
+    'acknowledgements', 'bibliogrpahy', 'copyright-page', 'dedication', 'epigraph',
+    'foreword', 'loi', 'lot', 'notes', 'preface'];
+
+    var parseItems = function (item) {
+        if (validTypes.indexOf(item.type) != -1) {
+            var guideItem = {
+                reference: {
+                    '@type': item.type,
+                    '@href': item.name + '.html'
+                }
+            };
+
+            items.push(guideItem);
+        }
+    };
+
+    data.spine.frontmatter.forEach(parseItems);
+
+    items.push({
+        reference: {
+            '@type': 'text',
+            '@href': data.outline[0].name + '.html'
+        }
+    });
+
+    data.spine.backmatter.forEach(parseItems);
+
+    return {
+        'guide': {
+            '#list': items
+        }
+    };
 };
 
 var spine = function (data) {
