@@ -1,10 +1,9 @@
 v0.3.0:
-    date: "2014-05-06",
+    date: "2014-05-06"
     changes:
-        - Creates the content.opf from metadata, with the exception of
-        the (optional) guide
+        - Creates the content.opf from metadata, with the exception of the (optional) guide
 v0.2.0:
-    date: "2014-05-05",
+    date: "2014-05-05"
     changes:
         - Creates the toc.ncx from metadata
 v0.1.0:

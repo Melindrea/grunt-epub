@@ -12,7 +12,6 @@ module.exports = function(grunt) {
     var path = require('path'),
     exec = require('child_process').exec,
     chalk = require('chalk'),
-    mustache = require('mustache'),
     metafiles = require('../libs/metafiles'),
     epubCheckVersion = '3.0.1';
 
