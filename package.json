@@ -1,7 +1,7 @@
 {
   "name": "grunt-epub",
   "description": "Creates epub from specified files",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "homepage": "https://github.com/Melindrea/grunt-epub",
   "author": {
     "name": "Marie Hogebrandt",
@@ -35,8 +35,7 @@
     "grunt-contrib-nodeunit": "^0.3.3",
     "chai": "~1.9.1",
     "mocha": "~1.18.2",
-    "jit-grunt": "^0.5.0",
-    "grunt-verb": "^0.2.4"
+    "jit-grunt": "^0.5.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.4"

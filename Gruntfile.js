@@ -37,7 +37,7 @@ module.exports = function (grunt) {
         options: {
         },
         files: {
-          'default': ['test/fixtures']
+          default: ['test/fixtures']
         }
       },
       custom_options: {
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
           dest: 'tmp/epub'
         },
         files: {
-          'custom': ['test/fixtures']
+          custom: ['test/fixtures']
         }
       }
     },
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
     epubCheck: {
       all: {
         files: {
-          'all': ['epub/default.epub', 'tmp/epub/custom.epub']
+          all: ['epub/default.epub', 'tmp/epub/custom.epub']
         }
       }
     },

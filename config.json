@@ -7,7 +7,7 @@
     "editor": null,
     "dates": {
         "original-publication": "2014-03-21T09:44:33Z",
-        "ops-publication": "2014-03-21T09:44:33Z"
+        "opf-publication": "2014-03-21T09:44:33Z"
     },
     "keywords": [
         "Urban Fantasy",
@@ -16,154 +16,125 @@
     "language": "sv",
     "license": null,
     "publisher": null,
-    "outline": [
-        {
-            "id": 2,
-            "name": "akt-01",
-            "items": [
-                {
-                    "id": 3,
-                    "name": "kapitel-01",
-                    "title": "Kapitel 1"
-                },
-                {
-                    "id": 4,
-                    "name": "mellanspel-01",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 5,
-                    "name": "kapitel-02",
-                    "title": "Kapitel 2"
-                },
-                {
-                    "id": 6,
-                    "name": "kapitel-03",
-                    "title": "Kapitel 3"
-                },
-                {
-                    "id": 7,
-                    "name": "mellanspel-02",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 8,
-                    "name": "kapitel-04",
-                    "title": "Kapitel 4"
-                },
-                {
-                    "id": 9,
-                    "name": "kapitel-05",
-                    "title": "Kapitel 5"
-                }
-            ],
-            "title": "Akt I: Konsten att F\u00f6rf\u00f6ra"
-        },
-        {
-            "id": 10,
-            "name": "akt-02",
-            "items": [
-                {
-                    "id": 11,
-                    "name": "kapitel-06",
-                    "title": "Kapitel 6"
-                },
-                {
-                    "id": 12,
-                    "name": "mellanspel-03",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 13,
-                    "name": "kapitel-07",
-                    "title": "Kapitel 7"
-                },
-                {
-                    "id": 14,
-                    "name": "kapitel-08",
-                    "title": "Kapitel 8"
-                },
-                {
-                    "id": 15,
-                    "name": "mellanspel-04",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 16,
-                    "name": "kapitel-09",
-                    "title": "Kapitel 9"
-                },
-                {
-                    "id": 17,
-                    "name": "kapitel-10",
-                    "title": "Kapitel 10"
-                }
-            ],
-            "title": "Akt II: Konsten att F\u00f6rf\u00f6lja"
-        },
-        {
-            "id": 18,
-            "name": "akt-03",
-            "items": [
-                {
-                    "id": 19,
-                    "name": "kapitel-11",
-                    "title": "Kapitel 12"
-                },
-                {
-                    "id": 20,
-                    "name": "mellanspel-05",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 21,
-                    "name": "kapitel-12",
-                    "title": "Kapitel 12"
-                },
-                {
-                    "id": 22,
-                    "name": "kapitel-13",
-                    "title": "Kapitel 13"
-                },
-                {
-                    "id": 23,
-                    "name": "kapitel-14",
-                    "title": "Kapitel 14"
-                },
-                {
-                    "id": 24,
-                    "name": "mellanspel-06",
-                    "title": "Mellanspel"
-                },
-                {
-                    "id": 25,
-                    "name": "kapitel-15",
-                    "title": "Kapitel 15"
-                },
-                {
-                    "id": 26,
-                    "name": "epilog",
-                    "title": "Epilog"
-                }
-            ],
-            "title": "Akt III: Konsten att F\u00f6rg\u00f6ra"
-        }
-    ],
-    "spine": {
+    "outline": {
+        "body": [
+            {
+                "name": "akt-01",
+                "items": [
+                    {
+                        "name": "kapitel-01",
+                        "title": "Kapitel 1"
+                    },
+                    {
+                        "name": "mellanspel-01",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-02",
+                        "title": "Kapitel 2"
+                    },
+                    {
+                        "name": "kapitel-03",
+                        "title": "Kapitel 3"
+                    },
+                    {
+                        "name": "mellanspel-02",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-04",
+                        "title": "Kapitel 4"
+                    },
+                    {
+                        "name": "kapitel-05",
+                        "title": "Kapitel 5"
+                    }
+                ],
+                "title": "Akt I: Konsten att F\u00f6rf\u00f6ra"
+            },
+            {
+                "name": "akt-02",
+                "items": [
+                    {
+                        "name": "kapitel-06",
+                        "title": "Kapitel 6"
+                    },
+                    {
+                        "name": "mellanspel-03",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-07",
+                        "title": "Kapitel 7"
+                    },
+                    {
+                        "name": "kapitel-08",
+                        "title": "Kapitel 8"
+                    },
+                    {
+                        "name": "mellanspel-04",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-09",
+                        "title": "Kapitel 9"
+                    },
+                    {
+                        "name": "kapitel-10",
+                        "title": "Kapitel 10"
+                    }
+                ],
+                "title": "Akt II: Konsten att F\u00f6rf\u00f6lja"
+            },
+            {
+                "name": "akt-03",
+                "items": [
+                    {
+                        "name": "kapitel-11",
+                        "title": "Kapitel 12"
+                    },
+                    {
+                        "name": "mellanspel-05",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-12",
+                        "title": "Kapitel 12"
+                    },
+                    {
+                        "name": "kapitel-13",
+                        "title": "Kapitel 13"
+                    },
+                    {
+                        "name": "kapitel-14",
+                        "title": "Kapitel 14"
+                    },
+                    {
+                        "name": "mellanspel-06",
+                        "title": "Mellanspel"
+                    },
+                    {
+                        "name": "kapitel-15",
+                        "title": "Kapitel 15"
+                    },
+                    {
+                        "name": "epilog",
+                        "title": "Epilog"
+                    }
+                ],
+                "title": "Akt III: Konsten att F\u00f6rg\u00f6ra"
+            }
+        ],
         "backmatter": [
             {
-                "id": 27,
                 "name": "colophon",
-                "title": "Kolophon",
-                "type": "colophon"
+                "title": "Kolophon"
             }
         ],
         "frontmatter": [
             {
-                "id": 1,
                 "name": "cover",
-                "title": "Framsida",
-                "type": "cover"
+                "title": "Framsida"
             }
         ]
     },

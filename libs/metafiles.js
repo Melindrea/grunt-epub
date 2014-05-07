@@ -112,34 +112,49 @@ metafiles.content = function (data, directories) {
 };
 
 var guide = function (data) {
-    var items = [];
+    var items = [], hasCover = false, hasToc = false;
     var validTypes = ['cover', 'colophon', 'title-page', 'toc', 'index', 'glossary',
-    'acknowledgements', 'bibliogrpahy', 'copyright-page', 'dedication', 'epigraph',
+    'acknowledgements', 'bibliography', 'copyright-page', 'dedication', 'epigraph',
     'foreword', 'loi', 'lot', 'notes', 'preface'];
 
     var parseItems = function (item) {
-        if (validTypes.indexOf(item.type) != -1) {
+        if (validTypes.indexOf(item.name) != -1) {
             var guideItem = {
                 reference: {
-                    '@type': item.type,
+                    '@type': item.name,
                     '@href': item.name + '.html'
                 }
             };
+
+            if (item.name === 'toc') {
+                hasToc = true;
+            } else if (item.name === 'cover') {
+                hasCover = true;
+            }
 
             items.push(guideItem);
         }
     };
 
-    data.spine.frontmatter.forEach(parseItems);
+    data.outline.frontmatter.forEach(parseItems);
 
+    // First item of the body is the beginning of the text
     items.push({
         reference: {
             '@type': 'text',
-            '@href': data.outline[0].name + '.html'
+            '@href': data.outline.body[0].name + '.html'
         }
     });
 
-    data.spine.backmatter.forEach(parseItems);
+    data.outline.backmatter.forEach(parseItems);
+
+    if (! hasCover) {
+        grunt.log.writeln('Note, Kindle requires a cover page');
+    }
+
+    if (! hasToc) {
+        grunt.log.writeln('Note, Kindle requires a Table of Content');
+    }
 
     return {
         'guide': {
@@ -165,12 +180,12 @@ var spine = function (data) {
         }
     };
 
-    data.spine.frontmatter.forEach(parseItems);
+    data.outline.frontmatter.forEach(parseItems);
 
     // The meat of the stuff
-    data.outline.forEach(parseItems);
+    data.outline.body.forEach(parseItems);
 
-    data.spine.backmatter.forEach(parseItems);
+    data.outline.backmatter.forEach(parseItems);
     return {
         'spine': {
             '@toc': 'ncx',
@@ -196,7 +211,7 @@ var manifest = function (data, directories) {
         var object = fs.statSync(item);
         return object.isFile();
     }).forEach(function (file) {
-        var relativePath = file;
+        var relativePath = file, fileArray;
         var mediaType = mime.lookup(file);
 
         if (mediaType === 'application/x-dtbncx+xml' || mediaType === 'application/oebps-package+xml') {
@@ -208,7 +223,8 @@ var manifest = function (data, directories) {
         var name = relativePath;
         if (mediaType === 'text/html') {
             mediaType = 'application/xhtml+xml';
-            name = name.replace('.html', '');
+            fileArray = name.split('/');
+            name = fileArray[fileArray.length-1].replace('.html', '');
         }
 
         items.push({
@@ -218,7 +234,6 @@ var manifest = function (data, directories) {
                 '@media-type': mediaType
             }
         });
-        console.log(file);
     });
 
     return {
@@ -230,14 +245,16 @@ var manifest = function (data, directories) {
 
 var navMap = function (data) {
     data.depth = 1;
+    var playOrder = 0;
 
     var items = [];
 
     var parseNavPoint = function (item, level) {
+        playOrder += 1;
         var navPoint = {
             navPoint: {
                 '@id': item.name,
-                '@playOrder': item.id,
+                '@playOrder': playOrder,
                 navLabel: {
                     text: item.title
                 },
@@ -261,12 +278,12 @@ var navMap = function (data) {
         items.push(parseNavPoint(item, 1));
     };
 
-    data.spine.frontmatter.forEach(navPoint);
+    data.outline.frontmatter.forEach(navPoint);
 
     // The meat of the stuff
-    data.outline.forEach(navPoint);
+    data.outline.body.forEach(navPoint);
 
-    data.spine.backmatter.forEach(navPoint);
+    data.outline.backmatter.forEach(navPoint);
 
     data.navMap = {
         navMap: {

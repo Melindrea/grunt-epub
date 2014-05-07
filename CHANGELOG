@@ -1,4 +1,10 @@
-v0.3.1;
+v0.3.2:
+    date: "2014-05-07"
+    changes:
+        - Refactor outline
+        - New docs with examples
+        - Remove grunt-verb until [this bug](https://github.com/assemble/grunt-verb/issues/1) is solved `verb` ran at the terminal instead
+v0.3.1:
     date: "2014-05-06"
     changes:
         - Create guide from frontmatter and backmatter
