@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xml:lang="sv" xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta name="dtb:uid" content="skarvor-av-det-forgangna2014-03-21-09-44-33-012690"/>
+    <meta name="dtb:depth" content="1"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>Skärvor av det förgångna</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="cover" playOrder="1">
+      <navLabel>
+        <text>Framsida</text>
+      </navLabel>
+      <content src="cover.html"/>
+    </navPoint>
+    <navPoint id="akt-01" playOrder="2">
+      <navLabel>
+        <text>Akt I: Konsten att Förföra</text>
+      </navLabel>
+      <content src="akt-01.html"/>
+    </navPoint>
+    <items>
+      <navPoint id="kapitel-01" playOrder="3">
+        <navLabel>
+          <text>Kapitel 1</text>
+        </navLabel>
+        <content src="kapitel-01.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-01" playOrder="4">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-01.html"/>
+      </navPoint>
+      <navPoint id="kapitel-02" playOrder="5">
+        <navLabel>
+          <text>Kapitel 2</text>
+        </navLabel>
+        <content src="kapitel-02.html"/>
+      </navPoint>
+      <navPoint id="kapitel-03" playOrder="6">
+        <navLabel>
+          <text>Kapitel 3</text>
+        </navLabel>
+        <content src="kapitel-03.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-02" playOrder="7">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-02.html"/>
+      </navPoint>
+      <navPoint id="kapitel-04" playOrder="8">
+        <navLabel>
+          <text>Kapitel 4</text>
+        </navLabel>
+        <content src="kapitel-04.html"/>
+      </navPoint>
+      <navPoint id="kapitel-05" playOrder="9">
+        <navLabel>
+          <text>Kapitel 5</text>
+        </navLabel>
+        <content src="kapitel-05.html"/>
+      </navPoint>
+    </items>
+    <navPoint id="akt-02" playOrder="10">
+      <navLabel>
+        <text>Akt II: Konsten att Förfölja</text>
+      </navLabel>
+      <content src="akt-02.html"/>
+    </navPoint>
+    <items>
+      <navPoint id="kapitel-06" playOrder="11">
+        <navLabel>
+          <text>Kapitel 6</text>
+        </navLabel>
+        <content src="kapitel-06.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-03" playOrder="12">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-03.html"/>
+      </navPoint>
+      <navPoint id="kapitel-07" playOrder="13">
+        <navLabel>
+          <text>Kapitel 7</text>
+        </navLabel>
+        <content src="kapitel-07.html"/>
+      </navPoint>
+      <navPoint id="kapitel-08" playOrder="14">
+        <navLabel>
+          <text>Kapitel 8</text>
+        </navLabel>
+        <content src="kapitel-08.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-04" playOrder="15">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-04.html"/>
+      </navPoint>
+      <navPoint id="kapitel-09" playOrder="16">
+        <navLabel>
+          <text>Kapitel 9</text>
+        </navLabel>
+        <content src="kapitel-09.html"/>
+      </navPoint>
+      <navPoint id="kapitel-10" playOrder="17">
+        <navLabel>
+          <text>Kapitel 10</text>
+        </navLabel>
+        <content src="kapitel-10.html"/>
+      </navPoint>
+    </items>
+    <navPoint id="akt-03" playOrder="18">
+      <navLabel>
+        <text>Akt III: Konsten att Förgöra</text>
+      </navLabel>
+      <content src="akt-03.html"/>
+    </navPoint>
+    <items>
+      <navPoint id="kapitel-11" playOrder="19">
+        <navLabel>
+          <text>Kapitel 12</text>
+        </navLabel>
+        <content src="kapitel-11.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-05" playOrder="20">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-05.html"/>
+      </navPoint>
+      <navPoint id="kapitel-12" playOrder="21">
+        <navLabel>
+          <text>Kapitel 12</text>
+        </navLabel>
+        <content src="kapitel-12.html"/>
+      </navPoint>
+      <navPoint id="kapitel-13" playOrder="22">
+        <navLabel>
+          <text>Kapitel 13</text>
+        </navLabel>
+        <content src="kapitel-13.html"/>
+      </navPoint>
+      <navPoint id="kapitel-14" playOrder="23">
+        <navLabel>
+          <text>Kapitel 14</text>
+        </navLabel>
+        <content src="kapitel-14.html"/>
+      </navPoint>
+      <navPoint id="mellanspel-06" playOrder="24">
+        <navLabel>
+          <text>Mellanspel</text>
+        </navLabel>
+        <content src="mellanspel-06.html"/>
+      </navPoint>
+      <navPoint id="kapitel-15" playOrder="25">
+        <navLabel>
+          <text>Kapitel 15</text>
+        </navLabel>
+        <content src="kapitel-15.html"/>
+      </navPoint>
+      <navPoint id="epilog" playOrder="26">
+        <navLabel>
+          <text>Epilog</text>
+        </navLabel>
+        <content src="epilog.html"/>
+      </navPoint>
+    </items>
+    <navPoint id="colophon" playOrder="27">
+      <navLabel>
+        <text>Kolophon</text>
+      </navLabel>
+      <content src="colophon.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

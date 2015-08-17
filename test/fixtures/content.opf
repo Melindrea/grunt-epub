@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="etextno">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dxsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:title>Skärvor av det förgångna</dc:title>
+    <dc:language xsi:type="dcterms:RFC3066">sv</dc:language>
+    <meta name="cover" content="cover"/>
+    <dc:identifier id="etextno" opf:scheme="UUID">skarvor-av-det-forgangna2014-03-21-09-44-33-012690</dc:identifier>
+    <dc:subject>Urban Fantasy, Svensk folktro</dc:subject>
+    <dc:subject>Some description ...</dc:subject>
+    <dc:creator opf:role="aut" opf:file-as="Hogebrandt, Marie">Marie Hogebrandt</dc:creator>
+    <dc:date opf-event="original-publication">2014-03-21T09:44:33Z</dc:date>
+    <dc:date opf-event="opf-publication">2014-03-21T09:44:33Z</dc:date>
+    <manifest>
+      <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+      <item id="file" href="file.html" media-type="application/xhtml+xml"/>
+      <item id="stylestylecss" href="style/style.css" media-type="text/css"/>
+    </manifest>
+    <spine toc="ncx">
+      <itemref idref="cover"/>
+      <itemref idref="akt-01"/>
+      <itemref idref="kapitel-01"/>
+      <itemref idref="mellanspel-01"/>
+      <itemref idref="kapitel-02"/>
+      <itemref idref="kapitel-03"/>
+      <itemref idref="mellanspel-02"/>
+      <itemref idref="kapitel-04"/>
+      <itemref idref="kapitel-05"/>
+      <itemref idref="akt-02"/>
+      <itemref idref="kapitel-06"/>
+      <itemref idref="mellanspel-03"/>
+      <itemref idref="kapitel-07"/>
+      <itemref idref="kapitel-08"/>
+      <itemref idref="mellanspel-04"/>
+      <itemref idref="kapitel-09"/>
+      <itemref idref="kapitel-10"/>
+      <itemref idref="akt-03"/>
+      <itemref idref="kapitel-11"/>
+      <itemref idref="mellanspel-05"/>
+      <itemref idref="kapitel-12"/>
+      <itemref idref="kapitel-13"/>
+      <itemref idref="kapitel-14"/>
+      <itemref idref="mellanspel-06"/>
+      <itemref idref="kapitel-15"/>
+      <itemref idref="epilog"/>
+      <itemref idref="colophon"/>
+    </spine>
+    <guide>
+      <reference type="cover" href="cover.html"/>
+      <reference type="text" href="akt-01.html"/>
+      <reference type="colophon" href="colophon.html"/>
+    </guide>
+  </metadata>
+</package>
