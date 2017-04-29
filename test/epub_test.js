@@ -23,11 +23,11 @@ var grunt = require('grunt');
 */
 
 exports.epub = {
-  setUp: function(done) {
+  setUp(done) {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  default_options(test) {
     test.expect(1);
 
     var actual = grunt.file.read('epub/default.epub');
@@ -36,7 +36,7 @@ exports.epub = {
 
     test.done();
   },
-  custom_options: function(test) {
+  custom_options(test) {
     test.expect(1);
 
     var actual = grunt.file.read('tmp/epub/custom.epub');

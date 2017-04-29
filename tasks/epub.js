@@ -8,23 +8,26 @@
 
 'use strict';
 
-module.exports = function(grunt) {
-    var path = require('path'),
-    exec = require('child_process').exec,
-    chalk = require('chalk'),
-    metafiles = require('../libs/metafiles'),
-    epubCheckVersion = '3.0.1';
+module.exports = grunt => {
+    var path = require('path');
+    var exec = require('child_process').exec;
+    var chalk = require('chalk');
+    var metafiles = require('../libs/metafiles');
+    var epubCheckVersion = '3.0.1';
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    // Please see the Grunt documentation for more information regarding task
+    // creation: http://gruntjs.com/creating-tasks
 
     grunt.registerMultiTask('epub', 'Creates epub from specified files', function () {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             dest: 'epub',
             meta: {}
-        }), files = path.resolve('files'), folder,
-        cb = this.async();
+        });
+
+        var files = path.resolve('files');
+        var folder;
+        var cb = this.async();
 
         grunt.file.mkdir(options.dest);
         // Iterate over all specified file groups.
@@ -37,7 +40,7 @@ module.exports = function(grunt) {
                 'zip -Xur9D ' + name + ' *'
             ];
 
-            var src = f.src.filter(function (filepath) {
+            var src = f.src.filter(filepath => {
             // Warn on and remove invalid source files (if nonull was set).
                 if (! grunt.file.exists(filepath)) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -47,7 +50,7 @@ module.exports = function(grunt) {
                 }
             });
 
-            src.forEach(function (filepath) {
+            src.forEach(filepath => {
                 folder = path.resolve(filepath);
                 cmd.push('cd ' + folder);
                 cmd.push('zip -Xur9D ' + name + ' *');
@@ -63,7 +66,7 @@ module.exports = function(grunt) {
             // grunt.log.writeln(content);
             grunt.file.write(folder + '/content.opf', content);
 
-            var cp = exec(cmd.join('&&'), options.execOptions, function (err, stdout, stderr) {
+            var cp = exec(cmd.join('&&'), options.execOptions, (err, stdout, stderr) => {
                 if (typeof options.callback === 'function') {
                     options.callback.call(this, err, stdout, stderr, cb);
                 } else {
@@ -72,23 +75,25 @@ module.exports = function(grunt) {
                     }
                     cb();
                 }
-            }.bind(this));
+            });
             // Print a success message.
             grunt.log.writeln('File "' + name + '" created.');
         });
     });
 
     grunt.registerMultiTask('epubCheck', 'Wrapper around epubcheck library', function () {
-        var cb = this.async(),
-        options = this.options({
-            failOnError: true
-        }),
-        lib = path.resolve('libs/epubcheck-' + epubCheckVersion + '/epubcheck-' + epubCheckVersion + '.jar');
+        var cb = this.async();
 
-        this.files.forEach(function (f) {
+        var options = this.options({
+            failOnError: true
+        });
+
+        var lib = path.resolve('libs/epubcheck-' + epubCheckVersion + '/epubcheck-' + epubCheckVersion + '.jar');
+
+        this.files.forEach(f => {
             var name = path.resolve(options.dest + '/' + f.dest + '.epub');
 
-            var src = f.src.filter(function (filepath) {
+            var src = f.src.filter(filepath => {
                 // Warn on and remove invalid source files (if nonull was set).
                 if (! grunt.file.exists(path.resolve(filepath))) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -98,7 +103,7 @@ module.exports = function(grunt) {
                 }
             }).forEach(function (filepath) {
                 var cmd = 'java -jar ' + lib + ' ' + filepath;
-                var cp = exec(cmd, options.execOptions, function (err, stdout, stderr) {
+                var cp = exec(cmd, options.execOptions, (err, stdout, stderr) => {
                     if (typeof options.callback === 'function') {
                         options.callback.call(this, err, stdout, stderr, cb);
                     } else {
@@ -107,7 +112,7 @@ module.exports = function(grunt) {
                         }
                         cb();
                     }
-                }.bind(this));
+                });
                 grunt.verbose.writeln('Command:', chalk.yellow(cmd));
             });
         });
