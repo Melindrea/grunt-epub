@@ -8,16 +8,16 @@
 
 'use strict';
 
-var path = require('path'),
-grunt = require('grunt'),
-builder = require('xmlbuilder'),
-fs = require('fs'),
-mime = require('mime'),
-_ = require('underscore.string');
+var path = require('path');
+var grunt = require('grunt');
+var builder = require('xmlbuilder');
+var fs = require('fs');
+var mime = require('mime');
+var _ = require('underscore.string');
 
 var metafiles = module.exports = {};
 
-metafiles.toc = function (data) {
+metafiles.toc = data => {
     data = navMap(data);
     var ncx = builder.create('ncx')
             .att('xml:lang', data.language)
@@ -39,10 +39,8 @@ metafiles.toc = function (data) {
     return ncx.end({ pretty: true, indent: '  ', newline: '\n' });
 };
 
-metafiles.content = function (data, directories) {
-    directories = grunt.file.expand(directories.map(function (dir) {
-        return dir + '/**';
-    }));
+metafiles.content = (data, directories) => {
+    directories = grunt.file.expand(directories.map(dir => dir + '/**'));
 
     var pkg = builder.create('package')
             .att('xmlns', 'http://www.idpf.org/2007/opf')
@@ -69,12 +67,12 @@ metafiles.content = function (data, directories) {
         }
 
         if (data.authors) {
-            data.authors.forEach(function (author) {
+            data.authors.forEach(author => {
                 pkg.e('dc:creator', author.name).att('opf:role', 'aut').att('opf:file-as', author.as).up();
             });
         }
         if (data.contributors) {
-            data.contributors.forEach(function (contributor) {
+            data.contributors.forEach(contributor => {
                 pkg.e('dc:contributor', contributor.name).att('opf:file-as', contributor.as).up();
             });
         }
@@ -92,7 +90,7 @@ metafiles.content = function (data, directories) {
         }
 
         if (data.dates) {
-            Object.keys(data.dates).forEach(function (key) {
+            Object.keys(data.dates).forEach(key => {
                 pkg.e('dc:date', data.dates[key]).att('opf-event', key).up();
             });
         }
@@ -111,13 +109,15 @@ metafiles.content = function (data, directories) {
     return pkg.end({ pretty: true, indent: '  ', newline: '\n' });
 };
 
-var guide = function (data) {
-    var items = [], hasCover = false, hasToc = false;
+var guide = data => {
+    var items = [];
+    var hasCover = false;
+    var hasToc = false;
     var validTypes = ['cover', 'colophon', 'title-page', 'toc', 'index', 'glossary',
     'acknowledgements', 'bibliography', 'copyright-page', 'dedication', 'epigraph',
     'foreword', 'loi', 'lot', 'notes', 'preface'];
 
-    var parseItems = function (item) {
+    var parseItems = item => {
         if (validTypes.indexOf(item.name) != -1) {
             var guideItem = {
                 reference: {
@@ -163,9 +163,9 @@ var guide = function (data) {
     };
 };
 
-var spine = function (data) {
+var spine = data => {
     var items = [];
-    var parseItems = function (item) {
+    var parseItems = item => {
         var spineItem = {
             itemref: {
                 '@idref': item.name
@@ -174,7 +174,7 @@ var spine = function (data) {
 
         items.push(spineItem);
         if (item.items) {
-            item.items.forEach(function (item) {
+            item.items.forEach(item => {
                 parseItems(item);
             });
         }
@@ -194,7 +194,7 @@ var spine = function (data) {
     };
 };
 
-var manifest = function (data, directories) {
+var manifest = (data, directories) => {
     var items = [{
         item: {
             '@id': 'ncx',
@@ -202,22 +202,23 @@ var manifest = function (data, directories) {
             '@media-type': 'application/x-dtbncx+xml'
         }
     }];
-    var dirs = directories.filter(function (item) {
+    var dirs = directories.filter(item => {
         var object = fs.statSync(item);
         return object.isDirectory();
     });
 
-    var files = directories.filter(function (item) {
+    var files = directories.filter(item => {
         var object = fs.statSync(item);
         return object.isFile();
-    }).forEach(function (file) {
-        var relativePath = file, fileArray;
+    }).forEach(file => {
+        var relativePath = file;
+        var fileArray;
         var mediaType = mime.lookup(file);
 
         if (mediaType === 'application/x-dtbncx+xml' || mediaType === 'application/oebps-package+xml') {
             return true;
         }
-        dirs.forEach(function (dir) {
+        dirs.forEach(dir => {
             relativePath = relativePath.replace(dir + '/', '');
         });
         var name = relativePath;
@@ -243,13 +244,13 @@ var manifest = function (data, directories) {
     };
 };
 
-var navMap = function (data) {
+var navMap = data => {
     data.depth = 1;
     var playOrder = 0;
 
     var items = [];
 
-    var parseNavPoint = function (item, level) {
+    var parseNavPoint = (item, level) => {
         playOrder += 1;
         var navPoint = {
             navPoint: {
@@ -266,7 +267,7 @@ var navMap = function (data) {
 
         if (item.items) {
             navPoint.items = [];
-            item.items.forEach(function (item) {
+            item.items.forEach(item => {
                 navPoint.items.push(parseNavPoint(item, level +1));
             });
         }
@@ -274,7 +275,7 @@ var navMap = function (data) {
         return navPoint;
     };
 
-    var navPoint = function (item) {
+    var navPoint = item => {
         items.push(parseNavPoint(item, 1));
     };
 
